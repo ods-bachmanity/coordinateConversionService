@@ -70,4 +70,10 @@ public class geoSpatialConverter
     {
        return geoTransMaster.retrieveAvailableDatums().toString();
     }
+    
+    @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
+    public String getCoordinateTypes() throws Exception
+    {
+        return geoTransMaster.retrieveAvailableCoordinateTypes().toString();
+    }
 }
