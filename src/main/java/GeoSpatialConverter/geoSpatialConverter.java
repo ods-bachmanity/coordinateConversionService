@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -23,7 +25,9 @@ public class geoSpatialConverter
         {
             JSONObject jsonObj = new JSONObject(jsonStr);
             String jsonResultStr = geoTransMaster.doConversion(jsonObj.toString()).toString();
-            return new ResponseEntity<String> (jsonResultStr, HttpStatus.OK);
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
         }
          catch (JSONException ex)
         {
@@ -43,9 +47,11 @@ public class geoSpatialConverter
     {
         try
         {
-        	JSONObject jsonObj = new JSONObject(jsonStr);
-            JSONObject jsonResultStr = geoTransMaster.doCoordinateTranslation(jsonObj.toString());
-            return new ResponseEntity<String> (jsonResultStr.toString(), HttpStatus.OK);
+            JSONObject jsonObj = new JSONObject(jsonStr);
+            String jsonResultStr = geoTransMaster.doCoordinateTranslation(jsonObj.toString()).toString();
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
         }
          catch (JSONException ex)
         {
@@ -53,21 +59,38 @@ public class geoSpatialConverter
         }
         catch (Exception e)
         {
-        	// TODO Auto-generated catch block
-        	e.printStackTrace();
-        	return new ResponseEntity<String> (e.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            return new ResponseEntity<String> (e.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @RequestMapping("/ellipsoids")
-    public String getEllipsoids() throws Exception
+    @RequestMapping(value = "/ellipsoids", method = RequestMethod.GET)
+    public ResponseEntity<String> getEllipsoids() throws Exception
     {
-        return geoTransMaster.retrieveAvailableEllipsoids().toString();
+        String jsonResultStr = geoTransMaster.retrieveAvailableEllipsoids().toString();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
     
-    @RequestMapping("/datums")
-    public String getDatums() throws Exception
+    @RequestMapping(value = "/datums", method = RequestMethod.GET)
+    public ResponseEntity<String> getDatums() throws Exception
     {
-       return geoTransMaster.retrieveAvailableDatums().toString();
+        String jsonResultStr = geoTransMaster.retrieveAvailableDatums().toString();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
+
+    }
+    
+    @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
+    public ResponseEntity<String> getCoordinateTypes() throws Exception
+    {
+        String jsonResultStr = geoTransMaster.retrieveAvailableCoordinateTypes().toString();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
+
     }
 }
