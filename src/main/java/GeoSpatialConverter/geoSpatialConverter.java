@@ -93,4 +93,10 @@ public class geoSpatialConverter
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
 
     }
+    
+    @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
+    public String getCoordinateTypes() throws Exception
+    {
+        return geoTransMaster.retrieveAvailableCoordinateTypes().toString();
+    }
 }
