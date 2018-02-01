@@ -41,7 +41,7 @@ public class geoSpatialConverter
         }
        
     }
-    
+
     @RequestMapping(value = "/doTranslation", method = RequestMethod.POST)
     public ResponseEntity<String> doTranslationPost(@RequestBody String jsonStr)
     {
@@ -73,7 +73,7 @@ public class geoSpatialConverter
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
-    
+
     @RequestMapping(value = "/datums", method = RequestMethod.GET)
     public ResponseEntity<String> getDatums() throws Exception
     {
@@ -81,9 +81,8 @@ public class geoSpatialConverter
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
-
     }
-    
+
     @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
     public ResponseEntity<String> getCoordinateTypes() throws Exception
     {
@@ -91,12 +90,5 @@ public class geoSpatialConverter
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
-
-    }
-    
-    @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
-    public String getCoordinateTypes() throws Exception
-    {
-        return geoTransMaster.retrieveAvailableCoordinateTypes().toString();
     }
 }
