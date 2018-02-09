@@ -6,25 +6,35 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
     }
 }
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
-jar {
+apply plugin: 'war'
+
+war {
     baseName = 'gs-rest-service'
     version =  '0.1.0'
 }
+
 repositories {
     mavenCentral()
     
     flatDir {
-        dirs 'C:\\Users\\samue\\Documents\\ODS-Files\\CoordinateConversion\\geoSpatialConversion-master-eaa4337d328f2107fb0c216c09b2200f1be09de4\\build\\libs', 'C:\\GEOTRANS'
+        dirs 'C:\\dev\\GEOTRANS_wrapper', 'C:\\dev\\GEOTRANS', 'C:\\dev\\swagger-java-client'
     }
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
 dependencies {
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
     compile("org.springframework.boot:spring-boot-starter-web")
+    
+    compile group: 'io.swagger', name: 'swagger-java-client', version: '1.0.0'
     
     compile group: 'mil.nga.ods', name: 'geospatialconversions', version: '1.+'
     compile group: 'mil.nga.msp', name: 'geotrans', version: '3.7'
