@@ -91,4 +91,13 @@ public class geoSpatialConverter
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<String> getEndpoints() throws Exception
+    {
+        String resultStr = "Endpoints:\n/ellipsoids\n/datums\n/coordinateTypes\n/doTranslation\n/doConversion\n";
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.TEXT_PLAIN);
+        return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);
+    }
 }
