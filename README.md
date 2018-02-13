@@ -32,7 +32,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 - The service will run until it is terminated.  Use `Ctrl-C` in the terminal to stop the running service.
 
 ## REST local server on port 8080
-- To test or use the coordinateConversionService, use a restful client to point to ``http://localhost:8080/`
+- To test or use the coordinateConversionService, use a restful client to point to `http://localhost:8080/`
 
 | Endpoint | Type | Description |
 | ------ | ------ | ------ |
