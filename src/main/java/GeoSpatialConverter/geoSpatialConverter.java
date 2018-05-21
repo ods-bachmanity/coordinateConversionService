@@ -17,8 +17,9 @@ import mil.nga.ods.geotrans.GeoTransMaster;
 public class geoSpatialConverter
 {   
     private GeoTransMaster geoTransMaster = new GeoTransMaster();
+    private static final String API_PREFIX = "/api";
     
-    @RequestMapping(value = "/doConversion", method = RequestMethod.POST)
+    @RequestMapping(value = API_PREFIX + "/doConversion", method = RequestMethod.POST)
     public ResponseEntity<String> doConversionPost(@RequestBody String jsonStr)
     {
         try
@@ -42,7 +43,7 @@ public class geoSpatialConverter
        
     }
 
-    @RequestMapping(value = "/doTranslation", method = RequestMethod.POST)
+    @RequestMapping(value = API_PREFIX + "/doTranslation", method = RequestMethod.POST)
     public ResponseEntity<String> doTranslationPost(@RequestBody String jsonStr)
     {
         try
@@ -65,7 +66,7 @@ public class geoSpatialConverter
         }
     }
 
-    @RequestMapping(value = "/ellipsoids", method = RequestMethod.GET)
+    @RequestMapping(value = API_PREFIX + "/ellipsoids", method = RequestMethod.GET)
     public ResponseEntity<String> getEllipsoids() throws Exception
     {
         String jsonResultStr = geoTransMaster.retrieveAvailableEllipsoids().toString();
@@ -74,7 +75,7 @@ public class geoSpatialConverter
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/datums", method = RequestMethod.GET)
+    @RequestMapping(value = API_PREFIX + "/datums", method = RequestMethod.GET)
     public ResponseEntity<String> getDatums() throws Exception
     {
         String jsonResultStr = geoTransMaster.retrieveAvailableDatums().toString();
@@ -83,7 +84,7 @@ public class geoSpatialConverter
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/coordinateTypes", method = RequestMethod.GET)
+    @RequestMapping(value = API_PREFIX + "/coordinateTypes", method = RequestMethod.GET)
     public ResponseEntity<String> getCoordinateTypes() throws Exception
     {
         String jsonResultStr = geoTransMaster.retrieveAvailableCoordinateTypes().toString();
@@ -92,10 +93,19 @@ public class geoSpatialConverter
         return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = API_PREFIX + "/sourceCoordinateInputByType", method = RequestMethod.GET)
+    public ResponseEntity<String> getSourceCoordinateInputByType() throws Exception
+    {
+        String jsonResultStr = geoTransMaster.retrieveSourceCoordinateInputByType().toString();
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = API_PREFIX, method = RequestMethod.GET)
     public ResponseEntity<String> getEndpoints() throws Exception
     {
-        String resultStr = "Endpoints:\n/ellipsoids\n/datums\n/coordinateTypes\n/doTranslation\n/doConversion\n";
+        String resultStr = "Endpoints:\n/coordinateTypes\n/datums\n/doTranslation\n/doConversion\n/ellipsoids\n/sourceCoordinateInputByType\n";
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.TEXT_PLAIN);
         return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);

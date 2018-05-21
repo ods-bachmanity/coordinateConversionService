@@ -17,7 +17,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 ### execution environment
 - Make sure you have the latest stable Java SE Runtime installed (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 - Make sure you have the GeoTrans program installed locally. Both the 64-bit Linux or 64-bit Windows build are supported. (http://earth-info.nga.mil/GandG/update/index.php?dir=coordsys&action=coordsys) (Note: *The GeoTrans download and documentation can be found under the Apps part of the Apps & Services section*)
-- The GeoTrans libraries must be available in the `PATH` or `LD_LIBRARY_PATH`.
+- The GeoTrans libraries must be available in the `PATH` (Windows) or `LD_LIBRARY_PATH` (Linux).
 - The environment variable `MSPCCS_DATA` must be set to the full path to the data folder of the GeoTrans install.
 
 ## build
@@ -27,12 +27,12 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 
 ## execution
 - Open a Terminal, ensure the environment variable `MSPCCS_DATA` is set.
-- Ensure the libraries for GeoTrans are available in the `PATH` or `LD_LIBRARY_PATH` variables.
+- Ensure the libraries for GeoTrans are available in the `PATH` (Windows) or `LD_LIBRARY_PATH` (Linux) variables.
 - Run the executable .war file to start the coordinateConversion web service. `java -jar gs-rest-service-0.1.0.war`
 - The service will run until it is terminated.  Use `Ctrl-C` in the terminal to stop the running service.
 
 ## REST local server on port 8080
-- To test or use the coordinateConversionService, use a restful client to point to `http://localhost:8080/`
+- To test or use the coordinateConversionService, use a restful client to point to `http://localhost:8080/{apiPrefix}`
 
 | Endpoint | Type | Description |
 | ------ | ------ | ------ |
@@ -41,6 +41,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 | /doConversion | POST | Returns JSON containing the converted coordinates |
 | /doTranslation | POST | Returns JSON containing the translated coordinates |
 | /ellipsoids | GET | Returns JSON containing the available ellipsoids |
+| /sourceCoordinateInputByType | GET | Returns JSON containing the required sourceCoordinate input fields by coordinate type |
 
 ## development notes
 - Git is rooted at the same level as this README.md file. To perform git commands properly against this repo you should execute those commands from that level e.g. `user/path/coordinateConverstionService/:-> git pull`
