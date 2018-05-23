@@ -110,4 +110,13 @@ public class geoSpatialConverter
         httpHeaders.setContentType(MediaType.TEXT_PLAIN);
         return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);
     }
+
+    @RequestMapping(value = API_PREFIX + "/health", method = RequestMethod.GET)
+    public ResponseEntity<String> getHealthCheck() throws Exception
+    {
+        String resultStr = "I'm doing science and I'm still alive.";
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.TEXT_PLAIN);
+        return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);
+    }
 }
