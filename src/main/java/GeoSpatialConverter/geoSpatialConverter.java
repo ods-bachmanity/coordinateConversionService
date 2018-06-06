@@ -105,7 +105,7 @@ public class geoSpatialConverter
     @RequestMapping(value = API_PREFIX, method = RequestMethod.GET)
     public ResponseEntity<String> getEndpoints() throws Exception
     {
-        String resultStr = "Endpoints:\n/coordinateTypes\n/datums\n/doTranslation\n/doConversion\n/ellipsoids\n/sourceCoordinateInputByType\n";
+        String resultStr = "Endpoints:\n/coordinateTypes\n/datums\n/doTranslation\n/doConversion\n/ellipsoids\n/sourceCoordinateInputByType\n/health";
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.TEXT_PLAIN);
         return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);

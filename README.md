@@ -42,6 +42,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 | /doTranslation | POST | Returns JSON containing the translated coordinates |
 | /ellipsoids | GET | Returns JSON containing the available ellipsoids |
 | /sourceCoordinateInputByType | GET | Returns JSON containing the required sourceCoordinate input fields by coordinate type |
+| /health | GET | Returns HTTP 200 status and text/plain message string if the service is reachable |
 
 ## development notes
 - Git is rooted at the same level as this README.md file. To perform git commands properly against this repo you should execute those commands from that level e.g. `user/path/coordinateConverstionService/:-> git pull`
