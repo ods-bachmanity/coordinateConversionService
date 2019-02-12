@@ -17,7 +17,7 @@ import mil.nga.ods.geotrans.GeoTransMaster;
 public class geoSpatialConverter
 {   
     private GeoTransMaster geoTransMaster = new GeoTransMaster();
-    private static final String API_PREFIX = "/api";
+    private static final String API_PREFIX = "/v2/ods/coordinateConversion";
     
     @RequestMapping(value = API_PREFIX + "/doConversion", method = RequestMethod.POST)
     public ResponseEntity<String> doConversionPost(@RequestBody String jsonStr)
