@@ -28,7 +28,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 ## execution
 - Open a Terminal, ensure the environment variable `MSPCCS_DATA` is set.
 - Ensure the libraries for GeoTrans are available in the `PATH` (Windows) or `LD_LIBRARY_PATH` (Linux) variables.
-- Run the executable .war file to start the coordinateConversion web service. `java -jar gs-rest-service-0.1.0.war`
+- Run the executable .war file to start the coordinateConversion web service. `java -jar gs-rest-service-0.3.0.war`
 - The service will run until it is terminated.  Use `Ctrl-C` in the terminal to stop the running service.
 
 ## REST local server on port 8080
