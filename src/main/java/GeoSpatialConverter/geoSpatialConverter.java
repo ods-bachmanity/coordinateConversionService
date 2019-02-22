@@ -15,24 +15,27 @@ import mil.nga.ods.geotrans.GeoTransMaster;
 
 @RestController
 public class geoSpatialConverter
-{   
+{
     private GeoTransMaster geoTransMaster = new GeoTransMaster();
     private static final String API_PREFIX = "/v2/ods/coordinateConversion";
-    
+
     @RequestMapping(value = API_PREFIX + "/doConversion", method = RequestMethod.POST)
     public ResponseEntity<String> doConversionPost(@RequestBody String jsonStr)
     {
         try
         {
-            JSONObject jsonObj = new JSONObject(jsonStr);
-            String jsonResultStr = geoTransMaster.doConversion(jsonObj.toString()).toString();
+            //JSONObject jsonObj = new JSONObject(jsonStr);
+            //String jsonResultStr = geoTransMaster.doConversion(jsonObj.toString()).toString();
+            JSONObject jsonRequestObj = new JSONObject(jsonStr);
+            JSONObject jsonReturnObj = geoTransMaster.doConversion(jsonRequestObj.toString());
+            jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson("success"));
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-            return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
+            return new ResponseEntity<String> (jsonReturnObj.toString(), httpHeaders, HttpStatus.OK);
         }
          catch (JSONException ex)
         {
-        	 return new ResponseEntity<String> (ex.toString(), HttpStatus.BAD_REQUEST);
+             return new ResponseEntity<String> (ex.toString(), HttpStatus.BAD_REQUEST);
         }
         catch (Exception e)
         {
@@ -40,7 +43,6 @@ public class geoSpatialConverter
             e.printStackTrace();
             return new ResponseEntity<String> (e.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-       
     }
 
     @RequestMapping(value = API_PREFIX + "/doTranslation", method = RequestMethod.POST)
@@ -48,15 +50,18 @@ public class geoSpatialConverter
     {
         try
         {
-            JSONObject jsonObj = new JSONObject(jsonStr);
-            String jsonResultStr = geoTransMaster.doCoordinateTranslation(jsonObj.toString()).toString();
+            //JSONObject jsonObj = new JSONObject(jsonStr);
+            //String jsonResultStr = geoTransMaster.doCoordinateTranslation(jsonObj.toString()).toString();
+            JSONObject jsonRequestObj = new JSONObject(jsonStr);
+            JSONObject jsonReturnObj = geoTransMaster.doCoordinateTranslation(jsonRequestObj.toString());
+            jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson("success"));
             HttpHeaders httpHeaders = new HttpHeaders();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-            return new ResponseEntity<String> (jsonResultStr, httpHeaders, HttpStatus.OK);
+            return new ResponseEntity<String> (jsonReturnObj.toString(), httpHeaders, HttpStatus.OK);
         }
          catch (JSONException ex)
         {
-        	 return new ResponseEntity<String> (ex.toString(), HttpStatus.BAD_REQUEST);
+             return new ResponseEntity<String> (ex.toString(), HttpStatus.BAD_REQUEST);
         }
         catch (Exception e)
         {
@@ -114,9 +119,17 @@ public class geoSpatialConverter
     @RequestMapping(value = API_PREFIX + "/health", method = RequestMethod.GET)
     public ResponseEntity<String> getHealthCheck() throws Exception
     {
-        String resultStr = "I'm doing science and I'm still alive.";
+        // Initialized return values for ODS structure.
+        String statusStr = "I'm doing science and I'm still alive.";
+        Boolean includeLastUpdated = true;
+
+        // Create object to store return and make the call
+        JSONObject jsonReturnObj = new JSONObject();
+        jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson(statusStr, includeLastUpdated));
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.TEXT_PLAIN);
-        return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);
+
+        // Prepare return
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonReturnObj.toString(), httpHeaders, HttpStatus.OK);
     }
 }
