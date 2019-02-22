@@ -119,9 +119,17 @@ public class geoSpatialConverter
     @RequestMapping(value = API_PREFIX + "/health", method = RequestMethod.GET)
     public ResponseEntity<String> getHealthCheck() throws Exception
     {
-        String resultStr = "I'm doing science and I'm still alive.";
+        // Initialized return values for ODS structure.
+        String statusStr = "I'm doing science and I'm still alive.";
+        Boolean includeLastUpdated = true;
+
+        // Create object to store return and make the call
+        JSONObject jsonReturnObj = new JSONObject();
+        jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson(statusStr, includeLastUpdated));
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.TEXT_PLAIN);
-        return new ResponseEntity<String> (resultStr, httpHeaders, HttpStatus.OK);
+
+        // Prepare return
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+        return new ResponseEntity<String> (jsonReturnObj.toString(), httpHeaders, HttpStatus.OK);
     }
 }
