@@ -1,0 +1,525 @@
+{
+  "info": {
+    "_postman_id": "bc368c3a-36c9-4a6c-8f75-ca0184f3e81c",
+    "name": "CoordinateConversion",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "testNumber",
+      "value": 0,
+      "type": "int"
+    },
+    {
+      "key": "requestBody",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "testNumber = pm.variables.get(\"testNumber\");",
+          "let testData = pm.iterationData.get(\"testData\")",
+          "let requestBody = JSON.stringify(testData[testNumber].requestBody)",
+          "++testNumber",
+          "pm.variables.set(\"testNumber\",testNumber);",
+          "pm.variables.set(\"requestBody\",requestBody);"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Heatlh Check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "022a0861-cf92-4876-a338-a3722276cf35",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\",function () {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Check response with no errors', () => {",
+              "pm.response.to.have.status(200);",
+              "pm.response.to.have.header(\"Content-Type\");",
+              "});",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "http://{{host}}/v2/ods/coordinateConversion/health",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {},
+        "description": "This request returns a successful response and performs assertions on expected content values"
+      },
+      "response": []
+    },
+    {
+      "name": "Datums",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "8c5a5fe9-59bf-450c-865a-80033033726d",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Check Number of availableDatums[253]\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(jsonData.availableDatums.length).to.equal(253)",
+              "});",
+              "pm.test(\"Datums Coordinates\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableDatums)).to.equal(JSON.stringify(expectedResponse[0].availableDatums));",
+              "});",
+              "pm.test(\"Check 4th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableDatums[4])).to.equal(JSON.stringify(expectedResponse[0].availableDatums[4]));",
+              "});",
+              "pm.test(\"Check 100th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableDatums[100])).to.equal(JSON.stringify(expectedResponse[0].availableDatums[100]));",
+              "});",
+              "pm.test(\"Check 250th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableDatums[250])).to.equal(JSON.stringify(expectedResponse[0].availableDatums[250]));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/datums",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "datums"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CoordinateTypes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "9b7c5449-798b-4be4-af23-393df7867f9c",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Check Number of CoordinateTypes [39]\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(jsonData.availableCoordinateTypeNames.length).to.equal(39)",
+              "});",
+              "pm.test(\"Coordinate Types\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableCoordinateTypeNames)).to.equal(JSON.stringify(expectedResponse[0].availableCoordinateTypeNames));",
+              "});",
+              "pm.test(\"Check 4th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableCoordinateTypeNames[4])).to.equal(JSON.stringify(expectedResponse[0].availableCoordinateTypeNames[4]));",
+              "});",
+              "pm.test(\"Check 25th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableCoordinateTypeNames[25])).to.equal(JSON.stringify(expectedResponse[0].availableCoordinateTypeNames[25]));",
+              "});",
+              "pm.test(\"Check 37th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableCoordinateTypeNames[37])).to.equal(JSON.stringify(expectedResponse[0].availableCoordinateTypeNames[37]));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/coordinateTypes",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "coordinateTypes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ellipsoids",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "8de3d204-ac0e-46db-bf91-ad44d4e2fbf4",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Check Number of availableEllipsoids [25]\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(jsonData.availableEllipsoids.length).to.equal(25)",
+              "});",
+              "pm.test(\"Ellipsoids\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableEllipsoids)).to.equal(JSON.stringify(expectedResponse[0].availableEllipsoids));",
+              "});",
+              "pm.test(\"Check 4th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableEllipsoids[4])).to.equal(JSON.stringify(expectedResponse[0].availableEllipsoids[4]));",
+              "});",
+              "pm.test(\"Check 15th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableEllipsoids[15])).to.equal(JSON.stringify(expectedResponse[0].availableEllipsoids[15]));",
+              "});",
+              "pm.test(\"Check 24th item\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.availableEllipsoids[24])).to.equal(JSON.stringify(expectedResponse[0].availableEllipsoids[24]));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/ellipsoids",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "ellipsoids"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sourceCoordinateInputByType",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2d3a984a-732b-4782-83b0-33a8bb8fe347",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Check Number of requiredSourceCoordinateFieldsByType [15]\", () => {",
+                " var jsonData = JSON.parse(responseBody);",
+                " testData = pm.iterationData.get(\"testData\")",
+                " expectedResponse = testData[testNumber-1].expectedResponse;",
+                " pm.expect(jsonData.requiredSourceCoordinateFieldsByType.length).to.equal(15)",
+                "});",
+              "pm.test(\"sourceCoordinateInputByType\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.requiredSourceCoordinateFieldsByType)).to.equal(JSON.stringify(expectedResponse[0].requiredSourceCoordinateFieldsByType));",
+              "});",
+              "pm.test(\"Check Coordinate Types 0, 15\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.requiredSourceCoordinateFieldsByType[0])).to.equal(JSON.stringify(expectedResponse[0].requiredSourceCoordinateFieldsByType[0]));",
+              "});",
+              "pm.test(\"Check Coordinate Types 6,7,20,21,29,36\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.requiredSourceCoordinateFieldsByType[3])).to.equal(JSON.stringify(expectedResponse[0].requiredSourceCoordinateFieldsByType[3]));",
+              "});",
+              "pm.test(\"Check Coordinate Type 34\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              " pm.expect(JSON.stringify(jsonData.requiredSourceCoordinateFieldsByType[14])).to.equal(JSON.stringify(expectedResponse[0].requiredSourceCoordinateFieldsByType[14]));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/sourceCoordinateInputByType",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "sourceCoordinateInputByType"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "doTranslation 1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "06fd1822-95b8-4393-ab84-a4a2931e1d53",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"doTranslation\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              "pm.expect(JSON.stringify(jsonData.CoordinateString)).to.equal(JSON.stringify(expectedResponse[0].CoordinateString));",
+              "console.log(jsonData.CoordinateString)",
+              "console.log(expectedResponse[0].CoordinateString)",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/doTranslation",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "doTranslation"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "doTranslation 2",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "06fd1822-95b8-4393-ab84-a4a2931e1d53",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"doTranslation\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              "pm.expect(JSON.stringify(jsonData.CoordinateString)).to.equal(JSON.stringify(expectedResponse[0].CoordinateString));",
+              "console.log(jsonData.CoordinateString)",
+              "console.log(expectedResponse[0].CoordinateString)",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/doTranslation",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "doTranslation"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "doConversion",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "22862e0c-fb08-422a-ac44-145f13107bbe",
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", () => {",
+              "      pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"doConversion\", () => {",
+              " var jsonData = JSON.parse(responseBody);",
+              " testData = pm.iterationData.get(\"testData\")",
+              " expectedResponse = testData[testNumber-1].expectedResponse;",
+              "pm.expect(JSON.stringify(jsonData.Coordinates)).to.equal(JSON.stringify(expectedResponse[0].Coordinates));",
+              "console.log(jsonData.Coordinates)",
+              "console.log(expectedResponse[0].Coordinates)",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{{requestBody}}"
+        },
+        "url": {
+          "raw": "http://{{host}}/v2/ods/coordinateConversion/doConversion",
+          "protocol": "http",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "v2",
+            "ods",
+            "coordinateConversion",
+            "doConversion"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
