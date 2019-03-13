@@ -121,11 +121,10 @@ public class geoSpatialConverter
     {
         // Initialized return values for ODS structure.
         String statusStr = "I'm doing science and I'm still alive.";
-        Boolean includeLastUpdated = true;
 
         // Create object to store return and make the call
         JSONObject jsonReturnObj = new JSONObject();
-        jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson(statusStr, includeLastUpdated));
+        jsonReturnObj.put("ODS", odsProcessorUtilities.getOdsProcessorJson(statusStr));
         HttpHeaders httpHeaders = new HttpHeaders();
 
         // Prepare return

@@ -16,7 +16,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 
 ### execution environment
 - Make sure you have the latest stable Java SE Runtime installed (http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-- Make sure you have the GeoTrans program installed locally. Both the 64-bit Linux or 64-bit Windows build are supported. (http://earth-info.nga.mil/GandG/update/index.php?dir=coordsys&action=coordsys) (Note: *The GeoTrans download and documentation can be found under the Apps part of the Apps & Services section*)
+- Make sure you have the GeoTrans program installed locally. Both the 64-bit Linux or 64-bit Windows build are supported. (http://earth-info.nga.mil/GandG/update/index.php) (Note: *The GeoTrans download and documentation can be found under the Apps part of the Apps & Services section*)
 - The GeoTrans libraries must be available in the `PATH` (Windows) or `LD_LIBRARY_PATH` (Linux).
 - The environment variable `MSPCCS_DATA` must be set to the full path to the data folder of the GeoTrans install.
 
@@ -28,7 +28,7 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 ## execution
 - Open a Terminal, ensure the environment variable `MSPCCS_DATA` is set.
 - Ensure the libraries for GeoTrans are available in the `PATH` (Windows) or `LD_LIBRARY_PATH` (Linux) variables.
-- Run the executable .war file to start the coordinateConversion web service. `java -jar gs-rest-service-0.3.0.war`
+- Run the executable .war file to start the coordinateConversion web service. `java -jar gs-rest-service-2.0.1.war`
 - The service will run until it is terminated.  Use `Ctrl-C` in the terminal to stop the running service.
 
 ## REST local server on port 8080
@@ -38,20 +38,20 @@ Creates a service to wrap the geoSpatialConversion wrapper which interfaces with
 | ------ | ------ | ------ |
 | /coordinateTypes | GET | Returns JSON containing the available coordinate types |
 | /datums | GET | Returns JSON containing the available datums |
-| /doConversion | POST | Returns JSON containing the converted coordinates |
-| /doTranslation | POST | Returns JSON containing the translated coordinates |
+| /doConversion | POST | Returns JSON containing the converted coordinates and ODS.Processors structure with status, version, and timestamp. |
+| /doTranslation | POST | Returns JSON containing the translated coordinates and ODS.Processors structure with status, version, and timestamp. |
 | /ellipsoids | GET | Returns JSON containing the available ellipsoids |
 | /sourceCoordinateInputByType | GET | Returns JSON containing the required sourceCoordinate input fields by coordinate type |
-| /health | GET | Returns HTTP 200 status and text/plain message string if the service is reachable |
+| /health | GET | Returns HTTP 200 status and JSON containing status, version and timestamp strings if the service is reachable |
 
 ## development notes
 - Git is rooted at the same level as this README.md file. To perform git commands properly against this repo you should execute those commands from that level e.g. `user/path/coordinateConverstionService/:-> git pull`
 - If you have any pending changes on your local machine and want to pull latest, you must stash or discard these changes before pulling. The easiest command in git to use is `git stash`. There are a variety of optional arguments to this command depending on what you want to do.
-- Must you can reach either the MavenCenral() repository or you define a path to your own repo which contains the required dependencies listed in the build.gradle for this project.
+- The build must be able to reach either the MavenCenral() repository or you define a path to your own repo which contains the required dependencies listed in the build.gradle for this project.
 
 ## stack
 - Spring Boot (https://spring.io/): Framework for building the Java RESTful interface.
 - geoSpatialConversion (https://gitlab.gs.mil/): Java wrapper for the GeoTrans native code application.
-- GeoTrans (http://earth-info.nga.mil/GandG/update/index.php?dir=coordsys&action=coordsys): The NGA and DOD approved coordinate converter and datum translator. Both 64-bit Linux and Windows versions of GeoTrans are supported.
+- GeoTrans (http://earth-info.nga.mil/GandG/update/index.php): The NGA and DOD approved coordinate converter and datum translator. Both 64-bit Linux and Windows versions of GeoTrans are supported.
 
 

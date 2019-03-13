@@ -18,7 +18,6 @@ public class odsProcessorUtilities
     // Back up values in case config file can't be read.
     private static final String ODS_PROCESSOR_NAME = "default_name";
     private static final String ODS_PROCESSOR_VERSION = "default_version";
-    private static final String ODS_PROCESSOR_LAST_UPDATED = "default_timestamp";
 
     /**
      * Method for generating JSON object that contains the values required for .
@@ -29,7 +28,7 @@ public class odsProcessorUtilities
      * @throws JSONException
      * @since ODS sprint 10.2
      */
-    public static JSONObject getOdsProcessorJson(String status, Boolean includeLastUpdated) throws JSONException
+    public static JSONObject getOdsProcessorJson(String status) throws JSONException
     {
         JSONObject processorJSON = new JSONObject();  // Store processor information
         JSONObject processorsJSON = new JSONObject();  // Store processors
@@ -40,26 +39,25 @@ public class odsProcessorUtilities
         // Get values from properties if they exist, or use defaults
         String processorName = (properties.containsKey("ODS_PROCESSOR_NAME")) ? properties.getProperty("ODS_PROCESSOR_NAME") : ODS_PROCESSOR_NAME;
         String processorVersion = (properties.containsKey("ODS_PROCESSOR_VERSION")) ? properties.getProperty("ODS_PROCESSOR_VERSION") : ODS_PROCESSOR_VERSION;
-        String processorLastUpdated = (properties.containsKey("ODS_PROCESSOR_LAST_UPDATED")) ? properties.getProperty("ODS_PROCESSOR_LAST_UPDATED") : ODS_PROCESSOR_LAST_UPDATED;
 
         processorJSON.put("status", status);
         processorJSON.put("timestamp", getEMCTimestamp());
         processorJSON.put("version", processorVersion);
-        if (includeLastUpdated)
-        {
-            processorJSON.put("lastUpdated", processorLastUpdated);
-        }
+
 
         processorsJSON.put(processorName, processorJSON);
         odsJSON.put("Processors", processorsJSON);
 
         return odsJSON;
     }
-    public static JSONObject getOdsProcessorJson(String status) throws JSONException
-    {
-        return getOdsProcessorJson(status, false);
-    }
 
+    /**
+     * Method for generating a timestamp string that matches the timestamp 
+     * format expected by the EMC.  
+     * 
+     * @return String containing timestamp in EMC format.  ex: 2019-03-13T19:25:29.175+00:00
+     * @since ODS sprint 10.2
+     */
     private static String getEMCTimestamp()
     {
         return ZonedDateTime                // Represent a moment as perceived in the wall-clock time used by the people of a particular region ( a time zone).
@@ -71,6 +69,14 @@ public class odsProcessorUtilities
                     );
     }
 
+    /**
+     * Method for loading a properties file into a Properties object to be
+     * returned to the caller.  Will attempt to load from file passed in,
+     * otherwise an empty Properties object will be returned.
+     * 
+     * @return Properties object containing values loaded from propertiesFile.
+     * @since ODS sprint 10.2
+     */
     private static Properties getConfigProperties(String propertiesFile)
     {
         Properties prop = new Properties();
