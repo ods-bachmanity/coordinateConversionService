@@ -1,0 +1,1656 @@
+[
+    {
+        "host": "bachmanity-coordinate-conversion-880876147.us-east-1.elb.amazonaws.com",
+        "testData": [
+            {
+                "testName": "Health Check",
+                "testNumber": 0,
+                "expectedResponse": []
+            },
+            {
+                "testName": "Datums",
+                "testNumber": 1,
+                "requestBody": {},
+                "expectedResponse": [
+                    {
+                        "availableDatums": [
+                            {
+                                "code": "WGE",
+                                "name": "World Geodetic System 1984"
+                            },
+                            {
+                                "code": "WGC",
+                                "name": "World Geodetic System 1972"
+                            },
+                            {
+                                "code": "EUR-7",
+                                "name": "EUROPEAN 1950, Mean (7 Param)"
+                            },
+                            {
+                                "code": "OGB-7",
+                                "name": "ORDNANCE GB 1936, Mean (7 Para)"
+                            },
+                            {
+                                "code": "ACC",
+                                "name": "ACCRA, Ghana"
+                            },
+                            {
+                                "code": "ADI-M",
+                                "name": "ADINDAN, Mean"
+                            },
+                            {
+                                "code": "ADI-A",
+                                "name": "ADINDAN, Ethiopia"
+                            },
+                            {
+                                "code": "ADI-B",
+                                "name": "ADINDAN, Sudan"
+                            },
+                            {
+                                "code": "ADI-C",
+                                "name": "ADINDAN, Mali"
+                            },
+                            {
+                                "code": "ADI-D",
+                                "name": "ADINDAN, Senegal"
+                            },
+                            {
+                                "code": "ADI-E",
+                                "name": "ADINDAN, Burkina Faso"
+                            },
+                            {
+                                "code": "ADI-F",
+                                "name": "ADINDAN, Cameroon"
+                            },
+                            {
+                                "code": "ADN",
+                                "name": "ADEN, Yemen"
+                            },
+                            {
+                                "code": "AFG",
+                                "name": "AFGOOYE, Somalia"
+                            },
+                            {
+                                "code": "AIA",
+                                "name": "ANTIGUA ISLAND ASTRO 1943"
+                            },
+                            {
+                                "code": "AIN-A",
+                                "name": "AIN EL ABD 1970, Bahrain"
+                            },
+                            {
+                                "code": "AIN-B",
+                                "name": "AIN EL ABD 1970, Saudi Arabia"
+                            },
+                            {
+                                "code": "AMA",
+                                "name": "AMERICAN SAMOA 1962"
+                            },
+                            {
+                                "code": "ANO",
+                                "name": "ANNA 1 ASTRO 1965, Cocos Is."
+                            },
+                            {
+                                "code": "ARF-M",
+                                "name": "ARC 1950, Mean"
+                            },
+                            {
+                                "code": "ARF-A",
+                                "name": "ARC 1950, Botswana"
+                            },
+                            {
+                                "code": "ARF-B",
+                                "name": "ARC 1950, Lesotho"
+                            },
+                            {
+                                "code": "ARF-C",
+                                "name": "ARC 1950, Malawi"
+                            },
+                            {
+                                "code": "ARF-D",
+                                "name": "ARC 1950, Swaziland"
+                            },
+                            {
+                                "code": "ARF-E",
+                                "name": "ARC 1950, Zaire"
+                            },
+                            {
+                                "code": "ARF-F",
+                                "name": "ARC 1950, Zambia"
+                            },
+                            {
+                                "code": "ARF-G",
+                                "name": "ARC 1950, Zimbabwe"
+                            },
+                            {
+                                "code": "ARF-H",
+                                "name": "ARC 1950, Burundi"
+                            },
+                            {
+                                "code": "ARS-M",
+                                "name": "ARC 1960, Kenya & Tanzania"
+                            },
+                            {
+                                "code": "ARS-A",
+                                "name": "ARC 1960, Kenya"
+                            },
+                            {
+                                "code": "ARS-B",
+                                "name": "ARC 1960, Tanzania"
+                            },
+                            {
+                                "code": "ARS-C",
+                                "name": "ARC 1960, Malawi"
+                            },
+                            {
+                                "code": "ASC",
+                                "name": "ASCENSION ISLAND 1958"
+                            },
+                            {
+                                "code": "ASM",
+                                "name": "MONTSERRAT ISLAND ASTRO 1958"
+                            },
+                            {
+                                "code": "ASQ",
+                                "name": "ASTRO STATION 1952, Marcus Is."
+                            },
+                            {
+                                "code": "ATF",
+                                "name": "ASTRO BEACON E 1945, Iwo Jima"
+                            },
+                            {
+                                "code": "AUA",
+                                "name": "AUSTRALIAN GEODETIC 1966"
+                            },
+                            {
+                                "code": "AUG",
+                                "name": "AUSTRALIAN GEODETIC 1984"
+                            },
+                            {
+                                "code": "BAT",
+                                "name": "DJAKARTA, INDONESIA"
+                            },
+                            {
+                                "code": "BID",
+                                "name": "BISSAU, Guinea-Bissau"
+                            },
+                            {
+                                "code": "BIO",
+                                "name": "BIOKO, Bioko Island"
+                            },
+                            {
+                                "code": "BER",
+                                "name": "BERMUDA 1957, Bermuda Islands"
+                            },
+                            {
+                                "code": "BOO",
+                                "name": "BOGOTA OBSERVATORY, Colombia"
+                            },
+                            {
+                                "code": "BUR",
+                                "name": "BUKIT RIMPAH, Banka & Belitung"
+                            },
+                            {
+                                "code": "BVD",
+                                "name": "BEKAA VALLEY 1920, Lebanon"
+                            },
+                            {
+                                "code": "CAC",
+                                "name": "CAPE CANAVERAL, Fla & Bahamas"
+                            },
+                            {
+                                "code": "CAI",
+                                "name": "CAMPO INCHAUSPE 1969, Arg."
+                            },
+                            {
+                                "code": "CAO",
+                                "name": "CANTON ASTRO 1966, Phoenix Is."
+                            },
+                            {
+                                "code": "CAP",
+                                "name": "CAPE, South Africa"
+                            },
+                            {
+                                "code": "CAZ",
+                                "name": "CAMP AREA ASTRO, Camp McMurdo"
+                            },
+                            {
+                                "code": "CCD",
+                                "name": "S-JTSK, Czech Republic"
+                            },
+                            {
+                                "code": "CGE",
+                                "name": "CARTHAGE, Tunisia"
+                            },
+                            {
+                                "code": "CHI",
+                                "name": "CHATHAM ISLAND ASTRO 1971, NZ"
+                            },
+                            {
+                                "code": "CHU",
+                                "name": "CHUA ASTRO, Paraguay"
+                            },
+                            {
+                                "code": "CIR",
+                                "name": "CIRCUIT, Zimbabwe"
+                            },
+                            {
+                                "code": "COA",
+                                "name": "CORREGO ALEGRE, Brazil"
+                            },
+                            {
+                                "code": "COU",
+                                "name": "CONAKRY 1905, Guinea"
+                            },
+                            {
+                                "code": "CPR",
+                                "name": "OBSERVATORIO 1907, Mozambique"
+                            },
+                            {
+                                "code": "DAL",
+                                "name": "DABOLA, Guinea"
+                            },
+                            {
+                                "code": "DCS",
+                                "name": "DCS-3 (ASTRO 1955), St Lucia"
+                            },
+                            {
+                                "code": "DID",
+                                "name": "DECEPTION ISLAND"
+                            },
+                            {
+                                "code": "DOB",
+                                "name": "GUX 1 ASTRO, Guadalcanal Is."
+                            },
+                            {
+                                "code": "EAS",
+                                "name": "EASTER ISLAND 1967"
+                            },
+                            {
+                                "code": "ENW",
+                                "name": "WAKE-ENIWETOK 1960"
+                            },
+                            {
+                                "code": "EST",
+                                "name": "ESTONIA, 1937"
+                            },
+                            {
+                                "code": "EUR-M",
+                                "name": "EUROPEAN 1950, Mean (3 Param)"
+                            },
+                            {
+                                "code": "EUR-A",
+                                "name": "EUROPEAN 1950, Western Europe"
+                            },
+                            {
+                                "code": "EUR-B",
+                                "name": "EUROPEAN 1950, Greece"
+                            },
+                            {
+                                "code": "EUR-C",
+                                "name": "EUROPEAN 1950, Norway & Finland"
+                            },
+                            {
+                                "code": "EUR-D",
+                                "name": "EUROPEAN 1950, Portugal & Spain"
+                            },
+                            {
+                                "code": "EUR-E",
+                                "name": "EUROPEAN 1950, Cyprus"
+                            },
+                            {
+                                "code": "EUR-F",
+                                "name": "EUROPEAN 1950, Egypt"
+                            },
+                            {
+                                "code": "EUR-G",
+                                "name": "EUROPEAN 1950, England, Channel"
+                            },
+                            {
+                                "code": "EUR-H",
+                                "name": "EUROPEAN 1950, Iran"
+                            },
+                            {
+                                "code": "EUR-I",
+                                "name": "EUROPEAN 1950, Sardinia(Italy)"
+                            },
+                            {
+                                "code": "EUR-J",
+                                "name": "EUROPEAN 1950, Sicily(Italy)"
+                            },
+                            {
+                                "code": "EUR-K",
+                                "name": "EUROPEAN 1950, England, Ireland"
+                            },
+                            {
+                                "code": "EUR-L",
+                                "name": "EUROPEAN 1950, Malta"
+                            },
+                            {
+                                "code": "EUR-S",
+                                "name": "EUROPEAN 1950, Iraq, Israel"
+                            },
+                            {
+                                "code": "EUR-T",
+                                "name": "EUROPEAN 1950, Tunisia"
+                            },
+                            {
+                                "code": "EUS",
+                                "name": "EUROPEAN 1979"
+                            },
+                            {
+                                "code": "FAH",
+                                "name": "OMAN"
+                            },
+                            {
+                                "code": "FJI",
+                                "name": "FIJI 1956"
+                            },
+                            {
+                                "code": "FLO",
+                                "name": "OBSERVATORIO MET. 1939, Flores"
+                            },
+                            {
+                                "code": "FOT",
+                                "name": "FORT THOMAS 1955, Leeward Is."
+                            },
+                            {
+                                "code": "GAA",
+                                "name": "GAN 1970, Rep. of Maldives"
+                            },
+                            {
+                                "code": "GAI",
+                                "name": "GAMBIA, Gambia"
+                            },
+                            {
+                                "code": "GEO",
+                                "name": "GEODETIC DATUM 1949, NZ"
+                            },
+                            {
+                                "code": "GIZ",
+                                "name": "DOS 1968, Gizo Island"
+                            },
+                            {
+                                "code": "GRA",
+                                "name": "GRACIOSA BASE SW 1948, Azores"
+                            },
+                            {
+                                "code": "GUA",
+                                "name": "GUAM 1963"
+                            },
+                            {
+                                "code": "GSE",
+                                "name": "GUNUNG SEGARA, Indonesia"
+                            },
+                            {
+                                "code": "HEN",
+                                "name": "HERAT NORTH, Afghanistan"
+                            },
+                            {
+                                "code": "HER",
+                                "name": "HERMANNSKOGEL, old Yugoslavia"
+                            },
+                            {
+                                "code": "HIT",
+                                "name": "PROVISIONAL SOUTH CHILEAN 1963"
+                            },
+                            {
+                                "code": "HJO",
+                                "name": "HJORSEY 1955, Iceland"
+                            },
+                            {
+                                "code": "HKD",
+                                "name": "HONG KONG 1963"
+                            },
+                            {
+                                "code": "HTN",
+                                "name": "HU-TZU-SHAN, Taiwan"
+                            },
+                            {
+                                "code": "IBE",
+                                "name": "BELLEVUE (IGN), Efate Is."
+                            },
+                            {
+                                "code": "IDN",
+                                "name": "INDONESIAN 1974"
+                            },
+                            {
+                                "code": "IND-B",
+                                "name": "INDIAN, Bangladesh"
+                            },
+                            {
+                                "code": "IND-I",
+                                "name": "INDIAN, India & Nepal"
+                            },
+                            {
+                                "code": "IND-P",
+                                "name": "INDIAN, Pakistan"
+                            },
+                            {
+                                "code": "IND-S",
+                                "name": "INDIAN, Sri Lanka"
+                            },
+                            {
+                                "code": "INF-A",
+                                "name": "INDIAN 1954, Thailand"
+                            },
+                            {
+                                "code": "ING-A",
+                                "name": "INDIAN 1960, Vietnam 16N"
+                            },
+                            {
+                                "code": "ING-B",
+                                "name": "INDIAN 1960, Con Son Island"
+                            },
+                            {
+                                "code": "INH-A",
+                                "name": "INDIAN 1975, Thailand"
+                            },
+                            {
+                                "code": "INH-A1",
+                                "name": "INDIAN 1975, Thailand"
+                            },
+                            {
+                                "code": "IRL",
+                                "name": "IRELAND 1965"
+                            },
+                            {
+                                "code": "ISG",
+                                "name": "ISTS 061 ASTRO 1968, S Georgia"
+                            },
+                            {
+                                "code": "IST",
+                                "name": "ISTS 073 ASTRO 1969, Diego Garc"
+                            },
+                            {
+                                "code": "JOH",
+                                "name": "JOHNSTON ISLAND 1961"
+                            },
+                            {
+                                "code": "KAN",
+                                "name": "KANDAWALA, Sri Lanka"
+                            },
+                            {
+                                "code": "KEG",
+                                "name": "KERGUELEN ISLAND 1949"
+                            },
+                            {
+                                "code": "KEA",
+                                "name": "KERTAU 1948, W Malaysia & Sing."
+                            },
+                            {
+                                "code": "KGS",
+                                "name": "KOREAN GEO DATUM 1995, S Korea"
+                            },
+                            {
+                                "code": "KUS",
+                                "name": "KUSAIE ASTRO 1951, Caroline Is."
+                            },
+                            {
+                                "code": "LCF",
+                                "name": "L.C. 5 ASTRO 1961, Cayman Brac"
+                            },
+                            {
+                                "code": "LEH",
+                                "name": "LEIGON, Ghana"
+                            },
+                            {
+                                "code": "LIB",
+                                "name": "LIBERIA 1964"
+                            },
+                            {
+                                "code": "LIS",
+                                "name": "LISBON, Portugal"
+                            },
+                            {
+                                "code": "LUZ-A",
+                                "name": "LUZON, Philippines"
+                            },
+                            {
+                                "code": "LUZ-B",
+                                "name": "LUZON, Mindanao Island"
+                            },
+                            {
+                                "code": "MAS",
+                                "name": "MASSAWA, Ethiopia"
+                            },
+                            {
+                                "code": "MCX",
+                                "name": "MAYOTTE COMBANI, Comoros"
+                            },
+                            {
+                                "code": "MER",
+                                "name": "MERCHICH, Morocco"
+                            },
+                            {
+                                "code": "MID",
+                                "name": "MIDWAY ASTRO 1961, Midway Is."
+                            },
+                            {
+                                "code": "MIK",
+                                "name": "MAHE 1971, Mahe Is."
+                            },
+                            {
+                                "code": "MIN-A",
+                                "name": "MINNA, Cameroon"
+                            },
+                            {
+                                "code": "MIN-B",
+                                "name": "MINNA, Nigeria"
+                            },
+                            {
+                                "code": "MOD",
+                                "name": "ROME 1940, Sardinia"
+                            },
+                            {
+                                "code": "MPO",
+                                "name": "M'PORALOKO, Gabon"
+                            },
+                            {
+                                "code": "MVS",
+                                "name": "VITI LEVU 1916, Viti Levu Is."
+                            },
+                            {
+                                "code": "NAH-A",
+                                "name": "NAHRWAN, Masirah Island (Oman)"
+                            },
+                            {
+                                "code": "NAH-B",
+                                "name": "NAHRWAN, United Arab Emirates"
+                            },
+                            {
+                                "code": "NAH-C",
+                                "name": "NAHRWAN, Saudi Arabia"
+                            },
+                            {
+                                "code": "NAP",
+                                "name": "NAPARIMA, Trinidad & Tobago"
+                            },
+                            {
+                                "code": "NAR-A",
+                                "name": "NORTH AMERICAN 1983, Alaska"
+                            },
+                            {
+                                "code": "NAR-B",
+                                "name": "NORTH AMERICAN 1983, Canada"
+                            },
+                            {
+                                "code": "NAR-C",
+                                "name": "NORTH AMERICAN 1983, CONUS"
+                            },
+                            {
+                                "code": "NAR-D",
+                                "name": "NORTH AMERICAN 1983, Mexico"
+                            },
+                            {
+                                "code": "NAR-E",
+                                "name": "NORTH AMERICAN 1983, Aleutian"
+                            },
+                            {
+                                "code": "NAR-H",
+                                "name": "NORTH AMERICAN 1983, Hawaii"
+                            },
+                            {
+                                "code": "NAS-A",
+                                "name": "NORTH AMERICAN 1927, Eastern US"
+                            },
+                            {
+                                "code": "NAS-B",
+                                "name": "NORTH AMERICAN 1927, Western US"
+                            },
+                            {
+                                "code": "NAS-C",
+                                "name": "NORTH AMERICAN 1927, CONUS"
+                            },
+                            {
+                                "code": "NAS-D",
+                                "name": "NORTH AMERICAN 1927, Alaska"
+                            },
+                            {
+                                "code": "NAS-E",
+                                "name": "NORTH AMERICAN 1927, Canada"
+                            },
+                            {
+                                "code": "NAS-F",
+                                "name": "NORTH AMERICAN 1927, Alberta/BC"
+                            },
+                            {
+                                "code": "NAS-G",
+                                "name": "NORTH AMERICAN 1927, E. Canada"
+                            },
+                            {
+                                "code": "NAS-H",
+                                "name": "NORTH AMERICAN 1927, Man/Ont"
+                            },
+                            {
+                                "code": "NAS-I",
+                                "name": "NORTH AMERICAN 1927, NW Terr."
+                            },
+                            {
+                                "code": "NAS-J",
+                                "name": "NORTH AMERICAN 1927, Yukon"
+                            },
+                            {
+                                "code": "NAS-L",
+                                "name": "NORTH AMERICAN 1927, Mexico"
+                            },
+                            {
+                                "code": "NAS-N",
+                                "name": "NORTH AMERICAN 1927, C. America"
+                            },
+                            {
+                                "code": "NAS-O",
+                                "name": "NORTH AMERICAN 1927, Canal Zone"
+                            },
+                            {
+                                "code": "NAS-P",
+                                "name": "NORTH AMERICAN 1927, Caribbean"
+                            },
+                            {
+                                "code": "NAS-Q",
+                                "name": "NORTH AMERICAN 1927, Bahamas"
+                            },
+                            {
+                                "code": "NAS-R",
+                                "name": "NORTH AMERICAN 1927, San Salv."
+                            },
+                            {
+                                "code": "NAS-T",
+                                "name": "NORTH AMERICAN 1927, Cuba"
+                            },
+                            {
+                                "code": "NAS-U",
+                                "name": "NORTH AMERICAN 1927, Greenland"
+                            },
+                            {
+                                "code": "NAS-V",
+                                "name": "NORTH AMERICAN 1927, Aleutian E"
+                            },
+                            {
+                                "code": "NAS-W",
+                                "name": "NORTH AMERICAN 1927, Aleutian W"
+                            },
+                            {
+                                "code": "NSD",
+                                "name": "NORTH SAHARA 1959, Algeria"
+                            },
+                            {
+                                "code": "NTF",
+                                "name": "NEW TRIANGULATION OF FRANCE"
+                            },
+                            {
+                                "code": "OCE",
+                                "name": "OCOTEPEQUE, Costa Rica"
+                            },
+                            {
+                                "code": "OEG",
+                                "name": "OLD EGYPTIAN 1907"
+                            },
+                            {
+                                "code": "OGB-M",
+                                "name": "ORDNANCE GB 1936, Mean (3 Para)"
+                            },
+                            {
+                                "code": "OGB-A",
+                                "name": "ORDNANCE GB 1936, England"
+                            },
+                            {
+                                "code": "OGB-B",
+                                "name": "ORDNANCE GB 1936, Eng., Wales"
+                            },
+                            {
+                                "code": "OGB-C",
+                                "name": "ORDNANCE GB 1936, Scotland"
+                            },
+                            {
+                                "code": "OGB-D",
+                                "name": "ORDNANCE GB 1936, Wales"
+                            },
+                            {
+                                "code": "OHA-M",
+                                "name": "OLD HAWAIIAN (CC), Mean"
+                            },
+                            {
+                                "code": "OHA-A",
+                                "name": "OLD HAWAIIAN (CC), Hawaii"
+                            },
+                            {
+                                "code": "OHA-B",
+                                "name": "OLD HAWAIIAN (CC), Kauai"
+                            },
+                            {
+                                "code": "OHA-C",
+                                "name": "OLD HAWAIIAN (CC), Maui"
+                            },
+                            {
+                                "code": "OHA-D",
+                                "name": "OLD HAWAIIAN (CC), Oahu"
+                            },
+                            {
+                                "code": "OHI-M",
+                                "name": "OLD HAWAIIAN (IN), Mean"
+                            },
+                            {
+                                "code": "OHI-A",
+                                "name": "OLD HAWAIIAN (IN), Hawaii"
+                            },
+                            {
+                                "code": "OHI-B",
+                                "name": "OLD HAWAIIAN (IN), Kauai"
+                            },
+                            {
+                                "code": "OHI-C",
+                                "name": "OLD HAWAIIAN (IN), Maui"
+                            },
+                            {
+                                "code": "OHI-D",
+                                "name": "OLD HAWAIIAN (IN), Oahu"
+                            },
+                            {
+                                "code": "PED",
+                                "name": "BEIJING (PEKING), China"
+                            },
+                            {
+                                "code": "PHA",
+                                "name": "AYABELLE LIGHTHOUSE, Djibouti"
+                            },
+                            {
+                                "code": "PIT",
+                                "name": "PITCAIRN ASTRO 1967"
+                            },
+                            {
+                                "code": "PLN",
+                                "name": "PICO DE LAS NIEVES, Canary Is."
+                            },
+                            {
+                                "code": "POS",
+                                "name": "PORTO SANTO 1936, Madeira Is."
+                            },
+                            {
+                                "code": "PRP-A",
+                                "name": "PROV. S AMERICAN 1956, Bolivia"
+                            },
+                            {
+                                "code": "PRP-B",
+                                "name": "PROV. S AMERICAN 1956, N Chile"
+                            },
+                            {
+                                "code": "PRP-C",
+                                "name": "PROV. S AMERICAN 1956, S Chile"
+                            },
+                            {
+                                "code": "PRP-D",
+                                "name": "PROV. S AMERICAN 1956, Colombia"
+                            },
+                            {
+                                "code": "PRP-E",
+                                "name": "PROV. S AMERICAN 1956, Ecuador"
+                            },
+                            {
+                                "code": "PRP-F",
+                                "name": "PROV. S AMERICAN 1956, Guyana"
+                            },
+                            {
+                                "code": "PRP-G",
+                                "name": "PROV. S AMERICAN 1956, Peru"
+                            },
+                            {
+                                "code": "PRP-H",
+                                "name": "PROV. S AMERICAN 1956, Venez"
+                            },
+                            {
+                                "code": "PRP-M",
+                                "name": "PROV. S AMERICAN 1956, Mean"
+                            },
+                            {
+                                "code": "PTB",
+                                "name": "POINT 58, Burkina Faso & Niger"
+                            },
+                            {
+                                "code": "PTN",
+                                "name": "POINT NOIRE 1948, Congo"
+                            },
+                            {
+                                "code": "PUK",
+                                "name": "PULKOVO 1942, Russia"
+                            },
+                            {
+                                "code": "PUR",
+                                "name": "PUERTO RICO & Virgin Is."
+                            },
+                            {
+                                "code": "QAT",
+                                "name": "QATAR NATIONAL"
+                            },
+                            {
+                                "code": "QUO",
+                                "name": "QORNOQ, South Greenland"
+                            },
+                            {
+                                "code": "REU",
+                                "name": "REUNION, Mascarene Is."
+                            },
+                            {
+                                "code": "SAE",
+                                "name": "SANTO (DOS) 1965"
+                            },
+                            {
+                                "code": "SAO",
+                                "name": "SAO BRAZ, Santa Maria Is."
+                            },
+                            {
+                                "code": "SAP",
+                                "name": "SAPPER HILL 1943, E Falkland Is"
+                            },
+                            {
+                                "code": "SAN-M",
+                                "name": "SOUTH AMERICAN 1969, Mean"
+                            },
+                            {
+                                "code": "SAN-A",
+                                "name": "SOUTH AMERICAN 1969, Argentina"
+                            },
+                            {
+                                "code": "SAN-B",
+                                "name": "SOUTH AMERICAN 1969, Bolivia"
+                            },
+                            {
+                                "code": "SAN-C",
+                                "name": "SOUTH AMERICAN 1969, Brazil"
+                            },
+                            {
+                                "code": "SAN-D",
+                                "name": "SOUTH AMERICAN 1969, Chile"
+                            },
+                            {
+                                "code": "SAN-E",
+                                "name": "SOUTH AMERICAN 1969, Colombia"
+                            },
+                            {
+                                "code": "SAN-F",
+                                "name": "SOUTH AMERICAN 1969, Ecuador"
+                            },
+                            {
+                                "code": "SAN-G",
+                                "name": "SOUTH AMERICAN 1969, Guyana"
+                            },
+                            {
+                                "code": "SAN-H",
+                                "name": "SOUTH AMERICAN 1969, Paraguay"
+                            },
+                            {
+                                "code": "SAN-I",
+                                "name": "SOUTH AMERICAN 1969, Peru"
+                            },
+                            {
+                                "code": "SAN-J",
+                                "name": "SOUTH AMERICAN 1969, Baltra"
+                            },
+                            {
+                                "code": "SAN-K",
+                                "name": "SOUTH AMERICAN 1969, Trinidad"
+                            },
+                            {
+                                "code": "SAN-L",
+                                "name": "SOUTH AMERICAN 1969, Venezuela"
+                            },
+                            {
+                                "code": "SCK",
+                                "name": "SCHWARZECK, Namibia"
+                            },
+                            {
+                                "code": "SEI",
+                                "name": "SOUTH EAST ISLAND, Seychelles"
+                            },
+                            {
+                                "code": "SGM",
+                                "name": "SELVAGEM GRANDE 1938, Salvage Is"
+                            },
+                            {
+                                "code": "SHB",
+                                "name": "ASTRO DOS 71/4, St. Helena Is."
+                            },
+                            {
+                                "code": "SIR",
+                                "name": "SIRGAS, South America"
+                            },
+                            {
+                                "code": "SOA",
+                                "name": "SOUTH ASIA, Singapore"
+                            },
+                            {
+                                "code": "SPK-A",
+                                "name": "S-42 (PULKOVO 1942), Hungary"
+                            },
+                            {
+                                "code": "SPK-B",
+                                "name": "S-42 (PULKOVO 1942), Poland"
+                            },
+                            {
+                                "code": "SPK-C",
+                                "name": "S-42 (PK42) Former Czechoslov."
+                            },
+                            {
+                                "code": "SPK-D",
+                                "name": "S-42 (PULKOVO 1942), Latvia"
+                            },
+                            {
+                                "code": "SPK-E",
+                                "name": "S-42 (PK 1942), Kazakhstan"
+                            },
+                            {
+                                "code": "SPK-F",
+                                "name": "S-42 (PULKOVO 1942), Albania"
+                            },
+                            {
+                                "code": "SPK-G",
+                                "name": "S-42 (PULKOVO 1942), Romania"
+                            },
+                            {
+                                "code": "SPK-H",
+                                "name": "S-42 (PULKOVO 1942), Estonia"
+                            },
+                            {
+                                "code": "SPX",
+                                "name": "ST PIERRE et MIQUELON 1950"
+                            },
+                            {
+                                "code": "SRL",
+                                "name": "SIERRA LEONE 1960"
+                            },
+                            {
+                                "code": "TAN",
+                                "name": "TANANARIVE OBSERVATORY 1925"
+                            },
+                            {
+                                "code": "TDC",
+                                "name": "TRISTAN ASTRO 1968"
+                            },
+                            {
+                                "code": "TEC",
+                                "name": "TETE 1960, Mozambique"
+                            },
+                            {
+                                "code": "TIL",
+                                "name": "TIMBALAI 1948, Brunei & E Malay"
+                            },
+                            {
+                                "code": "TIN",
+                                "name": "TIMBALAI 1968, Brunei"
+                            },
+                            {
+                                "code": "TOY-A",
+                                "name": "TOKYO, Japan"
+                            },
+                            {
+                                "code": "TOY-B",
+                                "name": "TOKYO, South Korea"
+                            },
+                            {
+                                "code": "TOY-B1",
+                                "name": "TOKYO, South Korea"
+                            },
+                            {
+                                "code": "TOY-C",
+                                "name": "TOKYO, Okinawa"
+                            },
+                            {
+                                "code": "TOY-M",
+                                "name": "TOKYO, Mean"
+                            },
+                            {
+                                "code": "TRN",
+                                "name": "ASTRO TERN ISLAND (FRIG) 1961"
+                            },
+                            {
+                                "code": "VOI",
+                                "name": "VOIROL 1874, Algeria"
+                            },
+                            {
+                                "code": "VOR",
+                                "name": "VOIROL 1960, Algeria"
+                            },
+                            {
+                                "code": "WAK",
+                                "name": "WAKE ISLAND ASTRO 1952"
+                            },
+                            {
+                                "code": "YAC",
+                                "name": "YACARE, Uruguay"
+                            },
+                            {
+                                "code": "ZAN",
+                                "name": "ZANDERIJ, Suriname"
+                            },
+                            {
+                                "code": "YOF",
+                                "name": "YOF ASTRO 1967, Senegal"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "testName": "CoordinateTypes",
+                "testNumber": 2,
+                "requestBody": {},
+                "expectedResponse": [
+                    {
+                        "availableCoordinateTypeNames": [
+                            {
+                                "index": 0,
+                                "code": "AC",
+                                "name": "Albers Equal Area Conic"
+                            },
+                            {
+                                "index": 1,
+                                "code": "AL",
+                                "name": "Azimuthal Equidistant (S)"
+                            },
+                            {
+                                "index": 2,
+                                "code": "BF",
+                                "name": "Bonne"
+                            },
+                            {
+                                "index": 3,
+                                "code": "BN",
+                                "name": "British National Grid"
+                            },
+                            {
+                                "index": 4,
+                                "code": "CS",
+                                "name": "Cassini"
+                            },
+                            {
+                                "index": 5,
+                                "code": "LI",
+                                "name": "Cylindrical Equal Area"
+                            },
+                            {
+                                "index": 6,
+                                "code": "EF",
+                                "name": "Eckert IV (S)"
+                            },
+                            {
+                                "index": 7,
+                                "code": "ED",
+                                "name": "Eckert VI (S)"
+                            },
+                            {
+                                "index": 8,
+                                "code": "CP",
+                                "name": "Equidistant Cylindrical (S)"
+                            },
+                            {
+                                "index": 9,
+                                "code": "GC",
+                                "name": "Geocentric"
+                            },
+                            {
+                                "index": 10,
+                                "code": "GD",
+                                "name": "Geodetic"
+                            },
+                            {
+                                "index": 11,
+                                "code": "GE",
+                                "name": "GEOREF"
+                            },
+                            {
+                                "index": 12,
+                                "code": "GA",
+                                "name": "Global Area Reference System (GARS)"
+                            },
+                            {
+                                "index": 13,
+                                "code": "GN",
+                                "name": "Gnomonic (S)"
+                            },
+                            {
+                                "index": 14,
+                                "code": "L1",
+                                "name": "Lambert Conformal Conic (1 Standard Parallel)"
+                            },
+                            {
+                                "index": 15,
+                                "code": "L2",
+                                "name": "Lambert Conformal Conic (2 Standard Parallel)"
+                            },
+                            {
+                                "index": 16,
+                                "code": "LC",
+                                "name": "Local Cartesian"
+                            },
+                            {
+                                "index": 17,
+                                "code": "MC",
+                                "name": "Mercator (Standard Parallel)"
+                            },
+                            {
+                                "index": 18,
+                                "code": "MF",
+                                "name": "Mercator (Scale Factor)"
+                            },
+                            {
+                                "index": 19,
+                                "code": "MG",
+                                "name": "Military Grid Reference System (MGRS)"
+                            },
+                            {
+                                "index": 20,
+                                "code": "MH",
+                                "name": "Miller Cylindrical (S)"
+                            },
+                            {
+                                "index": 21,
+                                "code": "MP",
+                                "name": "Mollweide (S)"
+                            },
+                            {
+                                "index": 22,
+                                "code": "NT",
+                                "name": "New Zealand Map Grid"
+                            },
+                            {
+                                "index": 23,
+                                "code": "NY",
+                                "name": "Ney's (Modified Lambert Conformal Conic)"
+                            },
+                            {
+                                "index": 24,
+                                "code": "OC",
+                                "name": "Oblique Mercator"
+                            },
+                            {
+                                "index": 25,
+                                "code": "OD",
+                                "name": "Orthographic (S)"
+                            },
+                            {
+                                "index": 26,
+                                "code": "PG",
+                                "name": "Polar Stereographic (Standard Parallel)"
+                            },
+                            {
+                                "index": 27,
+                                "code": "PF",
+                                "name": "Polar Stereographic (Scale Factor)"
+                            },
+                            {
+                                "index": 28,
+                                "code": "PH",
+                                "name": "Polyconic"
+                            },
+                            {
+                                "index": 29,
+                                "code": "SA",
+                                "name": "Sinusoidal"
+                            },
+                            {
+                                "index": 30,
+                                "code": "SD",
+                                "name": "Stereographic (S)"
+                            },
+                            {
+                                "index": 31,
+                                "code": "TX",
+                                "name": "Transverse Cylindrical Equal Area"
+                            },
+                            {
+                                "index": 32,
+                                "code": "TC",
+                                "name": "Transverse Mercator"
+                            },
+                            {
+                                "index": 33,
+                                "code": "UP",
+                                "name": "Universal Polar Stereographic (UPS)"
+                            },
+                            {
+                                "index": 34,
+                                "code": "UT",
+                                "name": "Universal Transverse Mercator (UTM)"
+                            },
+                            {
+                                "index": 35,
+                                "code": "US",
+                                "name": "United States National Grid (USNG)"
+                            },
+                            {
+                                "index": 36,
+                                "code": "VA",
+                                "name": "Van der Grinten"
+                            },
+                            {
+                                "index": 37,
+                                "code": "WM",
+                                "name": "Web Mercator (S)"
+                            },
+                            {
+                                "index": 38,
+                                "code": "F-16 Grid Reference System",
+                                "name": "F-16 Grid Reference System"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "testName": "Ellipsoids",
+                "testNumber": 3,
+                "requestBody": {},
+                "expectedResponse": [
+                    {
+                        "availableEllipsoids": [
+                            {
+                                "code": "AA",
+                                "name": "Airy 1830"
+                            },
+                            {
+                                "code": "AM",
+                                "name": "Modified Airy"
+                            },
+                            {
+                                "code": "AN",
+                                "name": "Australian National"
+                            },
+                            {
+                                "code": "BN",
+                                "name": "Bessel 1841 (Namibia)"
+                            },
+                            {
+                                "code": "BR",
+                                "name": "Bessel 1841 (Ethiopia, etc.)"
+                            },
+                            {
+                                "code": "CC",
+                                "name": "Clarke 1866"
+                            },
+                            {
+                                "code": "CD",
+                                "name": "Clarke 1880"
+                            },
+                            {
+                                "code": "CG",
+                                "name": "Clarke 1880 (IGN)"
+                            },
+                            {
+                                "code": "EA",
+                                "name": "Everest (India 1830)"
+                            },
+                            {
+                                "code": "EB",
+                                "name": "Everest (E. Malaysia, Brunei)"
+                            },
+                            {
+                                "code": "EC",
+                                "name": "Everest (India 1956)"
+                            },
+                            {
+                                "code": "ED",
+                                "name": "Everest (W. Malaysia 1969)"
+                            },
+                            {
+                                "code": "EE",
+                                "name": "Everest (W. Mal. & Sing. 1948"
+                            },
+                            {
+                                "code": "EF",
+                                "name": "Everest (Pakistan)"
+                            },
+                            {
+                                "code": "FA",
+                                "name": "Mod. Fischer 1960 (S. Asia)"
+                            },
+                            {
+                                "code": "HE",
+                                "name": "Helmert 1906"
+                            },
+                            {
+                                "code": "HO",
+                                "name": "Hough 1960"
+                            },
+                            {
+                                "code": "ID",
+                                "name": "Indonesian 1974"
+                            },
+                            {
+                                "code": "IN",
+                                "name": "International 1924"
+                            },
+                            {
+                                "code": "KA",
+                                "name": "Krassovsky 1940"
+                            },
+                            {
+                                "code": "RF",
+                                "name": "GRS 80"
+                            },
+                            {
+                                "code": "SA",
+                                "name": "South American 1969"
+                            },
+                            {
+                                "code": "WD",
+                                "name": "WGS 72"
+                            },
+                            {
+                                "code": "WE",
+                                "name": "WGS 84"
+                            },
+                            {
+                                "code": "WO",
+                                "name": "War Office 1924"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "testName": "sourceCoordinateInputByType",
+                "testNumber": 4,
+                "requestBody": {},
+                "expectedResponse": [
+                    {
+                        "requiredSourceCoordinateFieldsByType": [
+                            {
+                                "coordinateTypes": "0,15",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceOriginLatitude": "<double>",
+                                    "source1stStandardParallel": "<double>",
+                                    "source2ndStandardParallel": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "1,2,4,5,13,23,25,28,30",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceOriginLatitude": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "3,11,12,19,35,38",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceCoordinateString": "<string>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "6,7,20,21,29,36",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "8,17,26",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceStandardParallel": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "9",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceX": "<double>",
+                                            "sourceY": "<double>",
+                                            "sourceZ": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "10",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceHeightType": "<int>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceLongitude": "<double>",
+                                            "sourceLatitude": "<double>",
+                                            "sourceHeight": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "14,31,32",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceOriginLatitude": "<double>",
+                                    "sourceScaleFactor": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "16",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceOriginLatitude": "<double>",
+                                    "sourceOriginLongitude": "<double>",
+                                    "sourceOriginHeight": "<double>",
+                                    "sourceOrientation": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceX": "<double>",
+                                            "sourceY": "<double>",
+                                            "sourceZ": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "18",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceScaleFactor": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "22",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "24",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceOriginLatitude": "<double>",
+                                    "sourceScaleFactor": "<double>",
+                                    "sourceLongitude1": "<double>",
+                                    "sourceLatitude1": "<double>",
+                                    "sourceLongitude2": "<double>",
+                                    "sourceLatitude2": "<double>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "27",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCentralMeridian": "<double>",
+                                    "sourceFalseEasting": "<double>",
+                                    "sourceFalseNorthing": "<double>",
+                                    "sourceScaleFactor": "<double>",
+                                    "sourceHemisphere": "<char>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "33",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>",
+                                            "sourceHemisphere": "<char>"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "coordinateTypes": "34",
+                                "requiredSourceCoordinateFields": {
+                                    "sourceZone": "<boolean>",
+                                    "sourceCoordinates": [
+                                        {
+                                            "sourceEasting": "<double>",
+                                            "sourceNorthing": "<double>",
+                                            "sourceHemisphere": "<char>",
+                                            "sourceZoneData": "<int>"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "testName": "doTranslation 1",
+                "testNumber": 5,
+                "requestBody": {
+                    "inputCoordinateString": "88 33 19W",
+                    "inputCoordinateType": "1"
+                },
+                "expectedResponse": [
+                    {
+                        "CoordinateString": "-88.55527777777777"
+                    }
+                ]
+            },
+            {
+                "testName": "doTranslation 2",
+                "testNumber": 6,
+                "requestBody": {
+                    "inputCoordinateString": "51 28 38W",
+                    "inputCoordinateType": "1"
+                },
+                "expectedResponse": [
+                    {
+                        "CoordinateString":  "-51.477222222222224"
+                    }
+                ]
+            },
+            {
+                "testName": "doConversion",
+                "testNumber": 7,
+                "requestBody": {
+                    "geodeticSeparator": ",",
+                    "lonRange": "0",
+                    "leadingZeros": "false",
+                    "signHemisphere": "0",
+                    "geodeiticUnits": "2",
+                    "sourceDatum": "WGE",
+                    "sourceCoordinateType": "10",
+                    "sourceHeightType": "0",
+                    "targetDatum": "WGE",
+                    "targetCoordinateType": "34",
+                    "targetHeightType": "0",
+                    "targetZone": "false",
+                    "sourceCoordinates": [
+                          {"sourceLongitude": "-98.45339",
+                               "sourceLatitude": "30.21344",
+                               "sourceHeight": "0"},
+                              {"sourceLongitude": "-93.45339",
+                                   "sourceLatitude": "25.21344",
+                                   "sourceHeight": "0"}
+                                  ]},
+                "expectedResponse": [
+                    {
+                        "Coordinates": [
+                            {
+                                "Hemisphere": "N",
+                                "ZoneData": 14,
+                                "Easting": "552606.4843808573",
+                                "Northing": "3342562.8975198627"
+                            },
+                            {
+                                "Hemisphere": "N",
+                                "ZoneData": 15,
+                                "Easting": "454327.5948100477",
+                                "Northing": "2788658.9750879942"
+                            }
+                        ],
+                        "ODS": {
+                            "Processors": {
+                                "coordinateConversion": {
+                                    "status": "success",
+                                    "timestamp": "2019-03-12T14:45:37.355+00:00",
+                                    "version": "2.0.0"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

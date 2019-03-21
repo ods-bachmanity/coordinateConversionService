@@ -1,0 +1,106 @@
+[
+    {
+        "host": "bachmanity-coordinate-conversion-880876147.us-east-1.elb.amazonaws.com",
+        "testData": [
+            {
+                "testName": "health check",
+                "testNumber": 0,
+                "requestBody": "",
+                "expectedResponse": {
+                    "code": 0,
+                    "message": "",
+                    "errors": [],
+                    "warnings": []
+                }
+            },
+            {
+                "testName": "404 Error: Invalid Path /v2/ods/coordinateConversion/datum",
+                "testNumber": 1,
+                "requestBody": {},
+                "expectedResponse": {
+                    "timestamp": 1552487118310,
+                    "status": 404,
+                    "error": "Not Found",
+                    "message": "No message available",
+                    "path": "/v2/ods/coordinateConversion/fuzzy"
+                }
+            },
+            {
+                "testName": "405 Error – Request method ‘Post’ not supported v2/ods/coordinateConversion/datums",
+                "testNumber": 2,
+                "requestBody": {},
+                "expectedResponse": {
+                    "timestamp": 1552488266027,
+                    "status": 405,
+                    "error": "Method Not Allowed",
+                    "exception": "org.springframework.web.HttpRequestMethodNotSupportedException",
+                    "message": "Request method 'POST' not supported",
+                    "path": "/v2/ods/coordinateConversion/datums"
+                }
+            },
+            {
+                "testName": "500 Error – doTranslation – missing inputCoordinateString",
+                "testNumber": 3,
+                "requestBody": {
+                    "inputCoordinateType": "1"
+                },
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: inputCoordinateString is missing!"
+            },
+            {
+                "testName": "500 Error – doTranslation – missing inputCoordinateType",
+                "testNumber": 4,
+                "requestBody": {
+                    "inputCoordinateString": "88 33 19W"
+                },
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: inputCoordinateType is missing!"
+            },
+            {
+                "testName": "500 Error – doTranslation – invalid inputCoordinateType (must be numeric)",
+                "testNumber": 5,
+                "requestBody": {
+                    "inputCoordinateString": "88 33 19W",
+                    "inputCoordinateType": "1x"
+                },
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: Entry must be numeric\n"
+            },
+            {
+                "testName": "500 Error – doTranslation – empty JSON body",
+                "testNumber": 6,
+                "requestBody": {},
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: inputCoordinateString is missing!"
+            },
+            {
+                "testName": "500 Error – doConversion – missing parameter [sourceDatum]",
+                "testNumber": 7,
+                "requestBody":                 
+                {"geodeticSeparator": ",",
+                     "lonRange": "0",
+                     "leadingZeros": "false",
+                     "signHemisphere": "0",
+                     "geodeiticUnits": "2",
+                    
+                     "sourceCoordinateType": "10",
+                     "sourceHeightType": "0",
+                     "targetDatum": "WGE",
+                     "targetCoordinateType": "34",
+                     "targetHeightType": "0",
+                     "targetZone": "false",
+                     "sourceCoordinates": [
+                           {"sourceLongitude": "-98.45339",
+                                "sourceLatitude": "30.21344",
+                                "sourceHeight": "0"},
+                               {"sourceLongitude": "-93.45339",
+                                    "sourceLatitude": "25.21344",
+                                    "sourceHeight": "0"}
+                                   ]},
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: sourceDatum is missing!"
+            },
+            {
+                "testName": "500 Error – doConversion – empty JSON body",
+                "testNumber": 8,
+                "requestBody": {},
+                "expectedResponse": "geotrans3.exception.CoordinateConversionException: sourceDatum is missing!"
+            }
+        ]
+    }
+]
